@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.camunda.tutorial",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "CamundaGettingStarted",
+    "packageName": "com.camunda.tutorial",
+    "packageFolder": "com/camunda/tutorial",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YzgwZTVmYmQ0NzI5MTMxYzc4NjlhMGMwZjg5YTY3ZDBlZGMwMDIyY2M3YTdlNTljMTEzNmIzMmNjZGJiZmFhZDY1OTQ0MGQ2YmNiOTVhNDZmMGNjN2MwN2ZiMjkxYTU4YWVjOGRlYWM0NjY3YmJjNDA2MTZhMjVhMzM2ZWNjZTg=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "darkly",
+    "clientThemeVariant": "dark",
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en"]
+  }
+}
