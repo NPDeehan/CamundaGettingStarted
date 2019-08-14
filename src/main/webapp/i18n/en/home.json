@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
-    "subtitle": "This is your homepage",
+    "title": "Welcome To The Camunda Getting Started Guide",
+    "subtitle": "This is how to build your first Camunda process",
     "logged": {
       "message": "You are logged in as user \"{{username}}\"."
     },
@@ -11,7 +11,8 @@
       "stackoverflow": "JHipster on Stack Overflow",
       "bugtracker": "JHipster bug tracker",
       "chat": "JHipster public chat room",
-      "follow": "follow @java_hipster on Twitter"
+      "follow": "follow @java_hipster on Twitter",
+      "getStarted": "Get Started With Camunda!"
     },
     "like": "If you like JHipster, don't forget to give us a star on",
     "github": "GitHub"

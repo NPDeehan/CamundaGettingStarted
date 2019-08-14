@@ -9,6 +9,8 @@ import { Row, Col, Alert } from 'reactstrap';
 import { IRootState } from 'app/shared/reducers';
 import { getSession } from 'app/shared/reducers/authentication';
 
+import React, { Component, MouseEvent } from 'react';
+
 export interface IHomeProp extends StateProps, DispatchProps {}
 
 export class Home extends React.Component<IHomeProp> {
@@ -22,10 +24,10 @@ export class Home extends React.Component<IHomeProp> {
       <Row>
         <Col md="9">
           <h2>
-            <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
+            <Translate contentKey="home.title">Welcome To The Camunda Getting Started Guide</Translate>
           </h2>
           <p className="lead">
-            <Translate contentKey="home.subtitle">This is your homepage</Translate>
+            <Translate contentKey="home.subtitle">This is how to build your first Camunda process</Translate>
           </p>
           {account && account.login ? (
             <div>
@@ -42,11 +44,6 @@ export class Home extends React.Component<IHomeProp> {
                 <Link to="/login" className="alert-link">
                   <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
                 </Link>
-                <Translate contentKey="global.messages.info.authenticated.suffix">
-                  , you can try the default accounts:
-                  <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                  <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-                </Translate>
               </Alert>
 
               <Alert color="warning">
@@ -57,14 +54,22 @@ export class Home extends React.Component<IHomeProp> {
               </Alert>
             </div>
           )}
+          <div>
+            <Alert color="info">
+              <Link to="/camunda-getstarted" className="alert-link">
+                <Translate contentKey="home.link.getStarted">Register a new account</Translate>
+              </Link>
+            </Alert>
+          </div>
+
           <p>
             <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
           </p>
 
           <ul>
             <li>
-              <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
+              <a href="/camunda-getstarted" target="_blank" rel="noopener noreferrer">
+                <Translate contentKey="home.link.getStarted">Get Started With Camunda!</Translate>
               </a>
             </li>
             <li>
