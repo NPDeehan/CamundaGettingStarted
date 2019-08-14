@@ -25,11 +25,11 @@
       <bpmn:incoming>SequenceFlow_12gztm6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1yox3af</bpmn:outgoing>
     </bpmn:businessRuleTask>
-    <bpmn:userTask id="Task_1l4t4s7" name="Download for external client and" camunda:formKey="show-micro-downloads" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_1l4t4s7" name="Download for external client and" camunda:formKey="show-micro-downloads">
       <bpmn:incoming>SequenceFlow_1yox3af</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_15zqvga</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_003fbzx" name="Show Requirments" camunda:formKey="show-springboot-requirement" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_003fbzx" name="Show Requirments" camunda:formKey="show-springboot-requirement">
       <bpmn:incoming>SequenceFlow_1gxm0c1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0dal44e</bpmn:outgoing>
     </bpmn:userTask>
@@ -42,15 +42,15 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_15zqvga" sourceRef="Task_1l4t4s7" targetRef="Task_1ekg7kw" />
     <bpmn:sequenceFlow id="SequenceFlow_0itm0ss" sourceRef="Task_1ekg7kw" targetRef="EndEvent_1if04eu" />
-    <bpmn:userTask id="Task_1ekg7kw" name="Create Client" camunda:formKey="create-external-client" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_1ekg7kw" name="Create Client" camunda:formKey="create-external-client">
       <bpmn:incoming>SequenceFlow_15zqvga</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0itm0ss</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_0fhckuc" name="Show Archetecture Desctiption and Requirements" camunda:formKey="show-micro-requirement" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_0fhckuc" name="Show Archetecture Desctiption and Requirements" camunda:formKey="show-micro-requirement">
       <bpmn:incoming>SequenceFlow_1dlhbu5</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_12gztm6</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_0f0r8j8" name="Show springboot project settup" camunda:formKey="show-springboot-project-setup" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_0f0r8j8" name="Show springboot project settup" camunda:formKey="show-springboot-project-setup">
       <bpmn:incoming>SequenceFlow_0dal44e</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_14vmdn3</bpmn:outgoing>
     </bpmn:userTask>

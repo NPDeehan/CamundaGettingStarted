@@ -11,7 +11,8 @@ class CamundaGettingStarted extends React.Component {
 
   state = {
     count: 0,
-    nextModule: 'Nothing',
+    nextModule: 'fail',
+    processInstanceid: '',
     ref: false
   };
 
@@ -37,17 +38,44 @@ class CamundaGettingStarted extends React.Component {
       .then(data => this.setState({ nextModule: data[0].name, ref: true }));
   };
 
+  startMicroInstance = () => {
+    fetch('/rest/process-definition/key/GettingStartedGuide/start/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ variables: { arch: { value: 'micro', type: 'String' } }, businessKey: '1' })
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ processInstanceid: data.id });
+        return fetch(`/rest/task?processInstanceId=${this.processInstanceid}`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        })
+          .then(response => response.json())
+          .then(data => this.setState({ nextModule: data[0].formKey, ref: true }));
+      });
+  };
+  startSpringBootInstance = () => {
+    fetch('/rest/process-definition/key/GettingStartedGuide/start/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ variables: { arch: { value: 'springboot', type: 'String' } }, businessKey: '1' })
+    })
+      .then(response => response.json())
+      .then(data => this.setState({ processInstanceid: data.id }));
+  };
+
   render() {
     if (this.state.ref) {
       return <Redirect to={this.state.nextModule} />;
     } else {
       return (
         <div>
-          <h1>{this.state.name}</h1>
-          <button onClick={this.engine} className="btn btn-primary">
+          <h1>{this.state.processInstanceid}</h1>
+          <button onClick={this.startSpringBootInstance} className="btn btn-primary">
             Create a Springboot Project
           </button>
-          <button onClick={this.decrement} className="btn btn-warning  ">
+          <button onClick={this.startMicroInstance} className="btn btn-warning  ">
             Create a Microserice Project
           </button>
         </div>
