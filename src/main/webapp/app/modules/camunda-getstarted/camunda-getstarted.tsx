@@ -47,7 +47,7 @@ class CamundaGettingStarted extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ processInstanceid: data.id });
-        return fetch(`/rest/task?processInstanceId=${this.processInstanceid}`, {
+        return fetch(`/rest/task?processInstanceId=${data.id}`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' }
         })
@@ -67,7 +67,7 @@ class CamundaGettingStarted extends React.Component {
 
   render() {
     if (this.state.ref) {
-      return <Redirect to={this.state.nextModule} />;
+      return <Redirect to={`/${this.state.nextModule}`} />;
     } else {
       return (
         <div>

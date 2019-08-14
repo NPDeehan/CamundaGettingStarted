@@ -4,6 +4,7 @@ import Loadable from 'react-loadable';
 
 import Login from 'app/modules/login/login';
 import CamundaGetStarted from 'app/modules/camunda-getstarted/camunda-getstarted';
+import ShowMicroReq from 'app/modules/show-micro-requirement/show-micro-requirement';
 import Register from 'app/modules/account/register/register';
 import Activate from 'app/modules/account/activate/activate';
 import PasswordResetInit from 'app/modules/account/password-reset/init/password-reset-init';
@@ -32,6 +33,7 @@ const Routes = () => (
   <div className="view-routes">
     <Switch>
       <ErrorBoundaryRoute path="/camunda-getstarted" component={CamundaGetStarted} />
+      <ErrorBoundaryRoute path="/show-micro-requirement" component={ShowMicroReq} />
       <ErrorBoundaryRoute path="/login" component={Login} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />
       <ErrorBoundaryRoute path="/register" component={Register} />
