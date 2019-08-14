@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
+import { Route, Redirect } from 'react-router';
 import { Translate } from 'react-jhipster';
 
 class CamundaGettingStarted extends React.Component {
@@ -9,11 +10,9 @@ class CamundaGettingStarted extends React.Component {
   }
 
   state = {
-    count: 0
-  };
-
-  nextMod = {
-    modeName: 'Nothing'
+    count: 0,
+    name: 'Nothing',
+    ref: false
   };
 
   increment = () => {
@@ -33,18 +32,23 @@ class CamundaGettingStarted extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       }
-    });
-    this.nextMod.modeName = 'Set';
+    })
+      .then(response => response.json())
+      .then(data => this.setState({ name: data[0].name, ref: true }));
   };
 
   render() {
-    return (
-      <div>
-        <h1>{this.nextMod.modeName}</h1>
-        <button onClick={this.engine}>Create a Springboot Project</button>
-        <button onClick={this.decrement}>Create a Microserice Project</button>
-      </div>
-    );
+    if (this.state.ref) {
+      return <Redirect to={this.state.name} />;
+    } else {
+      return (
+        <div>
+          <h1>{this.state.name}</h1>
+          <button onClick={this.engine}>Create a Springboot Project</button>
+          <button onClick={this.decrement}>Create a Microserice Project</button>
+        </div>
+      );
+    }
   }
 }
 
