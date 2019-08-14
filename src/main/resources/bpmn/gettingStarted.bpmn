@@ -14,10 +14,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_1gxm0c1" name="Springboot Uber Jar" sourceRef="ExclusiveGateway_16o64eg" targetRef="Task_003fbzx">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{arch == 'springboot'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:userTask id="Task_1j9z7cs" name="Pick your archetecture" camunda:assignee="#{camundaCadet}">
-      <bpmn:incoming>SequenceFlow_1yq92kx</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1r8mmop</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:startEvent id="StartEvent_1" name="Start from the beginig" camunda:initiator="camundaCadet">
       <bpmn:outgoing>SequenceFlow_1yq92kx</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="Message_0pnbkm3" />
@@ -29,11 +25,11 @@
       <bpmn:incoming>SequenceFlow_12gztm6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1yox3af</bpmn:outgoing>
     </bpmn:businessRuleTask>
-    <bpmn:userTask id="Task_1l4t4s7" name="Download for external client and" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_1l4t4s7" name="Download for external client and" camunda:formKey="show-micro-downloads" camunda:assignee="#{camundaCadet}">
       <bpmn:incoming>SequenceFlow_1yox3af</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_15zqvga</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_003fbzx" name="Show Requirments" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_003fbzx" name="Show Requirments" camunda:formKey="show-springboot-requirement" camunda:assignee="#{camundaCadet}">
       <bpmn:incoming>SequenceFlow_1gxm0c1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0dal44e</bpmn:outgoing>
     </bpmn:userTask>
@@ -46,18 +42,22 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_15zqvga" sourceRef="Task_1l4t4s7" targetRef="Task_1ekg7kw" />
     <bpmn:sequenceFlow id="SequenceFlow_0itm0ss" sourceRef="Task_1ekg7kw" targetRef="EndEvent_1if04eu" />
-    <bpmn:userTask id="Task_1ekg7kw" name="Create Client" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_1ekg7kw" name="Create Client" camunda:formKey="create-external-client" camunda:assignee="#{camundaCadet}">
       <bpmn:incoming>SequenceFlow_15zqvga</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0itm0ss</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_0fhckuc" name="Show Archetecture Desctiption and Requirements" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_0fhckuc" name="Show Archetecture Desctiption and Requirements" camunda:formKey="show-micro-requirement" camunda:assignee="#{camundaCadet}">
       <bpmn:incoming>SequenceFlow_1dlhbu5</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_12gztm6</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_0f0r8j8" name="Show springboot project settup" camunda:assignee="#{camundaCadet}">
+    <bpmn:userTask id="Task_0f0r8j8" name="Show springboot project settup" camunda:formKey="show-springboot-project-setup" camunda:assignee="#{camundaCadet}">
       <bpmn:incoming>SequenceFlow_0dal44e</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_14vmdn3</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:manualTask id="Task_1j9z7cs" name="Pick your archetecture">
+      <bpmn:incoming>SequenceFlow_1yq92kx</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1r8mmop</bpmn:outgoing>
+    </bpmn:manualTask>
   </bpmn:process>
   <bpmn:message id="Message_0pnbkm3" name="getStarted" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -89,9 +89,6 @@
           <dc:Bounds x="494" y="327" width="82" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_0pu4eey_di" bpmnElement="Task_1j9z7cs">
-        <dc:Bounds x="270" y="218" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_0m3s7qw_di" bpmnElement="StartEvent_1">
         <dc:Bounds x="179" y="240" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -145,6 +142,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_0ksgkz5_di" bpmnElement="Task_0f0r8j8">
         <dc:Bounds x="750" y="321" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ManualTask_0xoizjj_di" bpmnElement="Task_1j9z7cs">
+        <dc:Bounds x="270" y="218" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

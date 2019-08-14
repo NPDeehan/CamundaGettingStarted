@@ -11,7 +11,7 @@ class CamundaGettingStarted extends React.Component {
 
   state = {
     count: 0,
-    name: 'Nothing',
+    nextModule: 'Nothing',
     ref: false
   };
 
@@ -34,18 +34,22 @@ class CamundaGettingStarted extends React.Component {
       }
     })
       .then(response => response.json())
-      .then(data => this.setState({ name: data[0].name, ref: true }));
+      .then(data => this.setState({ nextModule: data[0].name, ref: true }));
   };
 
   render() {
     if (this.state.ref) {
-      return <Redirect to={this.state.name} />;
+      return <Redirect to={this.state.nextModule} />;
     } else {
       return (
         <div>
           <h1>{this.state.name}</h1>
-          <button onClick={this.engine}>Create a Springboot Project</button>
-          <button onClick={this.decrement}>Create a Microserice Project</button>
+          <button onClick={this.engine} className="btn btn-primary">
+            Create a Springboot Project
+          </button>
+          <button onClick={this.decrement} className="btn btn-warning  ">
+            Create a Microserice Project
+          </button>
         </div>
       );
     }
