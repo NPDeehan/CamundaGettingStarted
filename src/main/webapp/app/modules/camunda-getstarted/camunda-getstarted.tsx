@@ -8,13 +8,16 @@ class CamundaGettingStarted extends React.Component {
     event.preventDefault();
     alert(event.currentTarget.tagName); // alerts BUTTON
   }
-
-  state = {
-    count: 0,
-    nextModule: 'fail',
-    processInstanceid: '',
-    ref: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      nextModule: 'fail',
+      processInstanceId: '',
+      taskId: '',
+      ref: false
+    };
+  }
 
   increment = () => {
     this.setState({
@@ -46,13 +49,13 @@ class CamundaGettingStarted extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        this.setState({ processInstanceid: data.id });
+        this.setState({ processInstanceId: data.id });
         return fetch(`/rest/task?processInstanceId=${data.id}`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' }
         })
           .then(response => response.json())
-          .then(data => this.setState({ nextModule: data[0].formKey, ref: true }));
+          .then(data => this.setState({ nextModule: data[0].formKey, taskId: data[0].id, ref: true }));
       });
   };
   startSpringBootInstance = () => {
@@ -62,16 +65,23 @@ class CamundaGettingStarted extends React.Component {
       body: JSON.stringify({ variables: { arch: { value: 'springboot', type: 'String' } }, businessKey: '1' })
     })
       .then(response => response.json())
-      .then(data => this.setState({ processInstanceid: data.id }));
+      .then(data => this.setState({ processInstanceId: data.id }));
   };
 
   render() {
     if (this.state.ref) {
-      return <Redirect to={`/${this.state.nextModule}`} />;
+      return (
+        <Redirect
+          to={{
+            pathname: `/${this.state.nextModule}`,
+            state: { processInstanceId: this.state.processInstanceId, taskId: this.state.taskId }
+          }}
+        />
+      );
     } else {
       return (
         <div>
-          <h1>{this.state.processInstanceid}</h1>
+          <h1>{this.state.processInstanceId}</h1>
           <button onClick={this.startSpringBootInstance} className="btn btn-primary">
             Create a Springboot Project
           </button>
