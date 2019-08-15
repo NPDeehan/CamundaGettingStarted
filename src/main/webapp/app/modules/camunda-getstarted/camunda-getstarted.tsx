@@ -3,7 +3,6 @@ import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
 import { Row, Col } from 'reactstrap';
 import { Route, Redirect } from 'react-router';
 import { Translate } from 'react-jhipster';
-import camundacorn from '/app/modules/static/images/camundacorn.png';
 
 class CamundaGettingStarted extends React.Component {
   handleClick(event: MouseEvent) {
@@ -103,8 +102,6 @@ class CamundaGettingStarted extends React.Component {
             <Col>
               <div>
                 <h3>You can also choose to make a springboot project where all of your logic will be in one Java Project</h3>
-
-                <img src={this.camundacorn} />
                 <button onClick={this.startSpringBootInstance} className="btn btn-primary">
                   Create a Springboot Project
                 </button>
