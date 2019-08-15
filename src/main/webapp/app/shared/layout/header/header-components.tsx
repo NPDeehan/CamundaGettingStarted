@@ -9,7 +9,7 @@ import appConfig from 'app/config/constants';
 
 export const BrandIcon = props => (
   <div {...props} className="brand-icon">
-    <img src="content/images/logo-jhipster.png" alt="Logo" />
+    <img src="content/images/Camunda_Icon_RGB_COL.png" alt="Logo" style={{ height: 50 }} />
   </div>
 );
 

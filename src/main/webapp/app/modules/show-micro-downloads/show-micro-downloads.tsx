@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { Row, Col, Alert } from 'reactstrap';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+const code = `
+              const { Client, logger } = require("camunda-external-task-client-js");
+                                                           
+              // configuration for the Client:
+              //  - 'baseUrl': url to the Workflow Engine
+             //  - 'logger': utility to automatically log important events
+             const config = { baseUrl: "http://localhost:8080/engine-rest", use: logger };
+                                                           
+               // create a Client instance with custom configuration
+                const client = new Client(config);
+                                                           
+               // susbscribe to the topic: 'creditScoreChecker'
+              client.subscribe("creditScoreChecker", async function({ task, taskService }) {
+              // Put your business logic
+              // complete the task
+              await taskService.complete(task);
+            }); `;
 
 class ShowMicroDownloads extends Component {
   state = {
@@ -56,42 +76,25 @@ class ShowMicroDownloads extends Component {
       return (
         <React.Fragment>
           <div>
-            <h1>Now you've got a choice to make</h1>
-            <h4>Select the programing language you'd like to use for this getting started guide</h4>
+            <h1>External Client</h1>
+            <h4>With the camunda planform running you're going to need to somehow communicate with it</h4>
           </div>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class={this.state.lang === 'Java' ? 'btn btn-primary active' : 'btn btn-primary'}>
-              Java
-              <input checked={this.state.lang === 'Java'} value="Java" type="radio" name="options" id="option1" onChange={this.setLang} />
-            </label>
-            <label class={this.state.lang === 'JavaScript' ? 'btn btn-primary active' : 'btn btn-primary'}>
-              JavaScript
-              <input
-                checked={this.state.lang === 'JavaScript'}
-                value="JavaScript"
-                type="radio"
-                name="options"
-                id="option2"
-                onChange={this.setLang}
-              />
-            </label>
-            <label class={this.state.lang === 'Python' ? 'btn btn-primary active' : 'btn btn-primary'}>
-              I don't care
-              <input
-                checked={this.state.lang === 'Python'}
-                value="Python"
-                type="radio"
-                name="options"
-                id="option3"
-                onChange={this.setLang}
-              />
-            </label>
+
+          <br />
+          <br />
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-header">JavaScript Worker</div>
+            <div class="card-body">
+              <h4 class="card-title">Here is what you need for the worker</h4>
+              <p class="card-text">
+                {' '}
+                <SyntaxHighlighter language="javascript" style={docco}>
+                  {code}
+                </SyntaxHighlighter>{' '}
+              </p>
+            </div>
           </div>
-          <br />
-          <br />
-          <h4>No matter which language you pick, you're doing to need the Camunda Engine</h4>
-          <br />
-          <br />
+
           <div class="alert alert-dismissible alert-info">
             <button type="button" class="close" data-dismiss="alert">
               &times;

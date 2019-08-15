@@ -27,7 +27,7 @@ class ShowMicroRequirement extends Component {
     fetch(`/rest/task/${this.props.location.state.taskId}/complete`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ variables: { lang: { value: 'Java', type: 'String' } } })
+      body: JSON.stringify({ variables: { lang: { value: this.state.lang, type: 'String' } } })
     }).then(data => {
       return fetch(`/rest/task?processInstanceId=${this.props.location.state.processInstanceId}`, {
         method: 'GET',
@@ -56,7 +56,7 @@ class ShowMicroRequirement extends Component {
       return (
         <React.Fragment>
           <div>
-            <h1>Now you've got a choice to make</h1>
+            <h1>Get setup with everything you need</h1>
             <h4>Select the programing language you'd like to use for this getting started guide</h4>
           </div>
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -92,7 +92,7 @@ class ShowMicroRequirement extends Component {
           <h4>No matter which language you pick, you're doing to need the Camunda Engine</h4>
           <br />
           <br />
-          <div class="alert alert-dismissible alert-info">
+          <div class="alert alert-dismissible alert-success">
             <button type="button" class="close" data-dismiss="alert">
               &times;
             </button>
@@ -107,20 +107,21 @@ class ShowMicroRequirement extends Component {
               .
             </p>
           </div>
-          <div class="alert alert-dismissible alert-info">
+          <div class="alert alert-dismissible alert-success">
             <button type="button" class="close" data-dismiss="alert">
               &times;
             </button>
-            <h4 class="alert-heading">Java Download</h4>
+            <h4 class="alert-heading">Camunda's Super Cool Modeler</h4>
             <p class="mb-0">
-              In order to run Camunda you're going to need to download{' '}
-              <a href="https://openjdk.java.net/install/" class="alert-link">
-                the Java OpenJDK
+              Depending on your operating system pick the right
+              <a href="https://camunda.com/download/modeler/" class="alert-link">
+                Download Here
               </a>
               .
             </p>
           </div>
-          <div class="alert alert-dismissible alert-info">
+
+          <div class="alert alert-dismissible alert-success">
             <button type="button" class="close" data-dismiss="alert">
               &times;
             </button>
@@ -128,6 +129,19 @@ class ShowMicroRequirement extends Component {
             <p class="mb-0">
               <a href="https://www.opera.com/download" class="alert-link">
                 just because its cool
+              </a>
+              .
+            </p>
+          </div>
+          <div class="alert alert-dismissible alert-warning">
+            <button type="button" class="close" data-dismiss="alert">
+              &times;
+            </button>
+            <h4 class="alert-heading">Java Download</h4>
+            <p class="mb-0">
+              If you don't already have it{' '}
+              <a href="https://openjdk.java.net/install/" class="alert-link">
+                the Java OpenJDK
               </a>
               .
             </p>
