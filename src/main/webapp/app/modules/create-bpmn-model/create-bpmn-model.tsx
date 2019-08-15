@@ -26,11 +26,26 @@ class CreateBpmnModel extends Component {
       .then(data => this.setState({ nextModule: data[0].name, ref: true }));
   };
 
+  userLost = () => {
+    fetch(`/rest/task/${this.props.location.state.taskId}/complete`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ variables: { lost: { value: true, type: 'Boolean' } } })
+    }).then(data => {
+      return fetch(`/rest/task?processInstanceId=${this.props.location.state.processInstanceId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      })
+        .then(response => response.json())
+        .then(data => this.setState({ nextModule: data[0].formKey, taskId: data[0].id, ref: true }));
+    });
+  };
+
   completeTask = () => {
     fetch(`/rest/task/${this.props.location.state.taskId}/complete`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ variables: { lang: { value: 'Java', type: 'String' } } })
+      body: JSON.stringify({ variables: { model: { value: 'ModelBuilt', type: 'String' } } })
     }).then(data => {
       return fetch(`/rest/task?processInstanceId=${this.props.location.state.processInstanceId}`, {
         method: 'GET',
@@ -87,6 +102,9 @@ class CreateBpmnModel extends Component {
           <div>
             <button onClick={this.completeTask} className="btn btn-primary">
               Go to Next Step
+            </button>
+            <button onClick={this.userLost} className="btn btn-danger">
+              Are you Having trouble?
             </button>
           </div>
         </React.Fragment>
