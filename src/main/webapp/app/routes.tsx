@@ -4,11 +4,11 @@ import Loadable from 'react-loadable';
 
 import Login from 'app/modules/login/login';
 import CamundaGetStarted from 'app/modules/camunda-getstarted/camunda-getstarted';
-import ShowMicroReq from 'app/modules/show-micro-requirement/show-micro-requirement';
+import ShowMicroRequirement from 'app/modules/show-micro-requirement/show-micro-requirement';
 import CreateExternalClient from 'app/modules/create-external-client/create-external-client';
-import ShowSpringbootProject from 'app/modules/show-micro-requirement/show-micro-requirement';
+import ShowSpringbootProject from 'app/modules/show-springboot-project/how-springboot-project';
 import ShowMicroDownloads from 'app/modules/show-micro-downloads/show-micro-downloads';
-import ShowSpringbootRequirement from 'app/modules/show-springboot-downloads/show-springboot-downloads';
+import ShowSpringbootRequirement from 'app/modules/show-springboot-requirement/show-springboot-requirement';
 import Register from 'app/modules/account/register/register';
 import Activate from 'app/modules/account/activate/activate';
 import PasswordResetInit from 'app/modules/account/password-reset/init/password-reset-init';
@@ -37,7 +37,7 @@ const Routes = () => (
   <div className="view-routes">
     <Switch>
       <ErrorBoundaryRoute path="/camunda-getstarted" component={CamundaGetStarted} />
-      <ErrorBoundaryRoute path="/show-micro-requirement" component={ShowMicroReq} />
+      <ErrorBoundaryRoute path="/show-micro-requirement" component={ShowMicroRequirement} />
       <ErrorBoundaryRoute path="/create-external-client" component={CreateExternalClient} />
       <ErrorBoundaryRoute path="/show-micro-downloads" component={ShowMicroDownloads} />
       <ErrorBoundaryRoute path="/show-micro-requirement" component={ShowSpringbootProject} />
