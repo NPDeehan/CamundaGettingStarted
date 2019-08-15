@@ -86,7 +86,7 @@ class ShowMicroRequirement extends Component {
             <h4 class="alert-heading">Camunda's Super Cool Modeler</h4>
             <p class="mb-0">
               Depending on your operating system pick the right
-              <a href="https://camunda.com/download/modeler/" class="alert-link">
+              <a href="https://camunda.com/download/modeler/" class="alert-link" target="_blank">
                 Download Here
               </a>
               .
@@ -99,7 +99,7 @@ class ShowMicroRequirement extends Component {
             </button>
             <h4 class="alert-heading">You should also get Opera</h4>
             <p class="mb-0">
-              <a href="https://www.opera.com/download" class="alert-link">
+              <a href="https://www.opera.com/download" class="alert-link" target="_blank">
                 just because its cool
               </a>
               .
@@ -112,7 +112,7 @@ class ShowMicroRequirement extends Component {
             <h4 class="alert-heading">Java Download</h4>
             <p class="mb-0">
               If you don't already have it{' '}
-              <a href="https://openjdk.java.net/install/" class="alert-link">
+              <a href="https://openjdk.java.net/install/" class="alert-link" target="_blank">
                 the Java OpenJDK
               </a>
               .

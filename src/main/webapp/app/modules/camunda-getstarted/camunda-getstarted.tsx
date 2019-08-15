@@ -65,7 +65,15 @@ class CamundaGettingStarted extends React.Component {
       body: JSON.stringify({ variables: { arch: { value: 'springboot', type: 'String' } }, businessKey: '1' })
     })
       .then(response => response.json())
-      .then(data => this.setState({ processInstanceId: data.id }));
+      .then(data => {
+        this.setState({ processInstanceId: data.id });
+        return fetch(`/rest/task?processInstanceId=${data.id}`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        })
+          .then(response => response.json())
+          .then(data => this.setState({ nextModule: data[0].formKey, taskId: data[0].id, ref: true }));
+      });
   };
 
   render() {

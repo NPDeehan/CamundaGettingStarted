@@ -120,6 +120,7 @@ class ShowMicroDownloadsJava extends Component {
               <a
                 href="https://camunda.org/release/camunda-bpm/tomcat/7.11/camunda-bpm-tomcat-7.11.0.zip?__hstc=252030934.3ccc2533575ddaceedbbf9babbbf837e.1553783104470.1565305832951.1565877799069.9&__hssc=252030934.1.1565877799069&__hsfp=3195920900"
                 class="alert-link"
+                target="_blank"
               >
                 download here
               </a>
@@ -132,7 +133,7 @@ class ShowMicroDownloadsJava extends Component {
             </button>
             <h4 class="alert-heading">You should also get Opera</h4>
             <p class="mb-0">
-              <a href="https://www.opera.com/download" class="alert-link">
+              <a href="https://www.opera.com/download" class="alert-link" target="_blank">
                 just because its cool
               </a>
               .

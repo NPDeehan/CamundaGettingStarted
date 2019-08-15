@@ -183,19 +183,19 @@
         <dc:Bounds x="270" y="348" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SubProcess_1mxzezx_di" bpmnElement="SubProcess_1ompfrj" isExpanded="true">
-        <dc:Bounds x="420" y="590" width="350" height="200" />
+        <dc:Bounds x="260" y="50" width="280" height="170" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_17ckje3_di" bpmnElement="EndEvent_17ckje3">
-        <dc:Bounds x="622" y="662" width="36" height="36" />
+        <dc:Bounds x="462" y="122" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0t825p8_di" bpmnElement="SequenceFlow_0t825p8">
-        <di:waypoint x="498" y="680" />
-        <di:waypoint x="622" y="680" />
+        <di:waypoint x="338" y="140" />
+        <di:waypoint x="462" y="140" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="StartEvent_08dfgw3_di" bpmnElement="StartEvent_0ztqfar">
-        <dc:Bounds x="462" y="662" width="36" height="36" />
+        <dc:Bounds x="302" y="122" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="462" y="705" width="37" height="14" />
+          <dc:Bounds x="302" y="165" width="37" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ExclusiveGateway_09x0x6s_di" bpmnElement="ExclusiveGateway_09x0x6s" isMarkerVisible="true">

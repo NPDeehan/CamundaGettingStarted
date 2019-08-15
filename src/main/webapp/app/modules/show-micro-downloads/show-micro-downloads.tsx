@@ -103,7 +103,7 @@ class ShowMicroDownloads extends Component {
             <p class="mb-0">
               {' '}
               you probably need node
-              <a href="https://nodejs.org/en/download/" class="alert-link">
+              <a href="https://nodejs.org/en/download/" class="alert-link" target="_blank">
                 Download Here
               </a>
               .

@@ -67,7 +67,7 @@ class CreateBpmnModel extends Component {
           <br />
           <iframe
             src="https://cawemo.com/embed/e9be88c1-31c0-4a11-a0b1-e111892fd92a"
-            style={{ width: '700px', height: '500px', border: '1px solid #ccc' }}
+            style={{ width: '1500px', height: '500px', border: '1px solid #ccc' }}
             allowfullscreen
           />
 
@@ -77,7 +77,7 @@ class CreateBpmnModel extends Component {
             </button>
             <h4 class="alert-heading">Would you like to see a BPMN Reference page?</h4>
             <p class="mb-0">
-              <a href="https://docs.camunda.com" class="alert-link">
+              <a href="https://docs.camunda.org" class="alert-link" target="_blank">
                 just because its cool
               </a>
               .
