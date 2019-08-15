@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
+import { Row, Col } from 'reactstrap';
 import { Route, Redirect } from 'react-router';
 import { Translate } from 'react-jhipster';
+import camundacorn from '/app/modules/static/images/camundacorn.png';
 
 class CamundaGettingStarted extends React.Component {
   handleClick(event: MouseEvent) {
@@ -88,15 +90,28 @@ class CamundaGettingStarted extends React.Component {
       );
     } else {
       return (
-        <div>
-          <h1>{this.state.processInstanceId}</h1>
-          <button onClick={this.startSpringBootInstance} className="btn btn-primary">
-            Create a Springboot Project
-          </button>
-          <button onClick={this.startMicroInstance} className="btn btn-warning  ">
-            Create a Microserice Project
-          </button>
-        </div>
+        <React.Fragment>
+          <Row>
+            <Col md="3" className="pad">
+              <div>
+                <h1>{this.state.processInstanceId}</h1>
+                <button onClick={this.startMicroInstance} className="btn btn-warning  ">
+                  Create a Microserice Project
+                </button>
+              </div>
+            </Col>
+            <Col md="12" className="pad">
+              <div>
+                <h1>{this.state.processInstanceId}</h1>
+
+                <img src={this.camundacorn} />
+                <button onClick={this.startSpringBootInstance} className="btn btn-primary">
+                  Create a Springboot Project
+                </button>
+              </div>
+            </Col>
+          </Row>
+        </React.Fragment>
       );
     }
   }
