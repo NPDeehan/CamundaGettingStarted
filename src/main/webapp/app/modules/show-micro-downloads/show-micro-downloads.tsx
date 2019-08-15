@@ -85,7 +85,7 @@ class ShowMicroDownloads extends Component {
           <div class="card text-white bg-primary mb-3">
             <div class="card-header">JavaScript Worker</div>
             <div class="card-body">
-              <h4 class="card-title">Here is what you need for the worker</h4>
+              <h4 class="card-title">Copy this code and run it with node</h4>
               <p class="card-text">
                 {' '}
                 <SyntaxHighlighter language="javascript" style={docco}>
@@ -95,29 +95,16 @@ class ShowMicroDownloads extends Component {
             </div>
           </div>
 
-          <div class="alert alert-dismissible alert-info">
+          <div class="alert alert-dismissible alert-warning">
             <button type="button" class="close" data-dismiss="alert">
               &times;
             </button>
-            <h4 class="alert-heading">Time to Get Camunda!</h4>
+            <h4 class="alert-heading">Having problems?</h4>
             <p class="mb-0">
-              <a
-                href="https://camunda.org/release/camunda-bpm/tomcat/7.11/camunda-bpm-tomcat-7.11.0.zip?__hstc=252030934.3ccc2533575ddaceedbbf9babbbf837e.1553783104470.1565305832951.1565877799069.9&__hssc=252030934.1.1565877799069&__hsfp=3195920900"
-                class="alert-link"
-              >
-                download here
-              </a>
-              .
-            </p>
-          </div>
-          <div class="alert alert-dismissible alert-info">
-            <button type="button" class="close" data-dismiss="alert">
-              &times;
-            </button>
-            <h4 class="alert-heading">You should also get Opera</h4>
-            <p class="mb-0">
-              <a href="https://www.opera.com/download" class="alert-link">
-                just because its cool
+              {' '}
+              you probably need node
+              <a href="https://nodejs.org/en/download/" class="alert-link">
+                Download Here
               </a>
               .
             </p>

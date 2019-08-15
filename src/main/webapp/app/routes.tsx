@@ -5,6 +5,7 @@ import Loadable from 'react-loadable';
 import Login from 'app/modules/login/login';
 import CamundaGetStarted from 'app/modules/camunda-getstarted/camunda-getstarted';
 import ShowMicroDownloads from 'app/modules/show-micro-downloads/show-micro-downloads';
+import ShowMicroDownloadsJava from 'app/modules/show-micro-downloads-java/show-micro-downloads-java';
 import ShowMicroRequirement from 'app/modules/show-micro-requirement/show-micro-requirement';
 import ShowExternalTaskRest from 'app/modules/show-external-task-rest/show-external-rest';
 import ShowSpringbootProject from 'app/modules/show-springboot-project-setup/how-springboot-project-setup';
@@ -40,6 +41,7 @@ const Routes = () => (
       <ErrorBoundaryRoute path="/camunda-getstarted" component={CamundaGetStarted} />
       <ErrorBoundaryRoute path="/create-external-client" component={CreateExternalClient} />
       <ErrorBoundaryRoute path="/show-micro-downloads" component={ShowMicroDownloads} />
+      <ErrorBoundaryRoute path="/show-micro-downloads-java" component={ShowMicroDownloadsJava} />
       <ErrorBoundaryRoute path="/show-micro-requirement" component={ShowMicroRequirement} />
       <ErrorBoundaryRoute path="/show-external-task-rest" component={ShowExternalTaskRest} />
       <ErrorBoundaryRoute path="/show-springboot-project-setup" component={ShowSpringbootRequirement} />
