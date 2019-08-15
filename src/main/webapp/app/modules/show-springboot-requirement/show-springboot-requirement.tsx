@@ -14,7 +14,7 @@ class ShowSpringbootRequirement extends Component {
     fetch(`/rest/task/${this.props.location.state.taskId}/complete`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ variables: { arch: { value: 'micro', type: 'String' } } })
+      body: JSON.stringify({ variables: { arch: { value: 'micro', type: 'String' } }, withVariablesInReturn: true })
     }).then(data => {
       return fetch(`/rest/task?processInstanceId=${this.props.location.state.processInstanceId}`, {
         method: 'GET',
