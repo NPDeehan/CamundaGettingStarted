@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0fik8mj" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.2.1">
-  <bpmn:process id="GettingStartedGuide" name="GettingStartedGuide" isExecutable="true">
+  <bpmn:process id="CamundaStartedGuide" name="CamundaStartedGuide" isExecutable="true">
     <bpmn:sequenceFlow id="SequenceFlow_1yq92kx" sourceRef="StartEvent_1" targetRef="Task_1j9z7cs" />
     <bpmn:exclusiveGateway id="ExclusiveGateway_16o64eg">
       <bpmn:incoming>SequenceFlow_1r8mmop</bpmn:incoming>
@@ -36,8 +36,8 @@
       <bpmn:incoming>SequenceFlow_0itpccw</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_15zqvga" sourceRef="Task_1l4t4s7" targetRef="ExclusiveGateway_0noy69s" />
-    <bpmn:userTask id="Task_1ekg7kw" name="Create Model" camunda:formKey="create-external-client">
-      <bpmn:incoming>SequenceFlow_0y78swd</bpmn:incoming>
+    <bpmn:userTask id="Task_1ekg7kw" name="Create external task client" camunda:formKey="create-external-client">
+      <bpmn:incoming>SequenceFlow_0acvy3c</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0e7ryt5</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="Task_0fhckuc" name="Show Archetecture Desctiption and Requirements" camunda:formKey="show-micro-requirement">
@@ -87,7 +87,7 @@
       <bpmn:incoming>SequenceFlow_1hfpdr9</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0y78swd</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="SequenceFlow_0y78swd" sourceRef="ExclusiveGateway_0noy69s" targetRef="Task_1ekg7kw" />
+    <bpmn:sequenceFlow id="SequenceFlow_0y78swd" sourceRef="ExclusiveGateway_0noy69s" targetRef="Task_13ftjdw" />
     <bpmn:sequenceFlow id="SequenceFlow_0uam01t" sourceRef="Task_18jxax4" targetRef="ExclusiveGateway_0noy69s" />
     <bpmn:sequenceFlow id="SequenceFlow_1hfpdr9" sourceRef="Task_15kla5h" targetRef="ExclusiveGateway_0noy69s" />
     <bpmn:userTask id="Task_15kla5h" name="Download for external Java client" camunda:formKey="show-micro-downloads-java">
@@ -100,10 +100,15 @@
       <bpmn:incoming>SequenceFlow_0e7ryt5</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0itpccw</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0acvy3c" sourceRef="Task_13ftjdw" targetRef="Task_1ekg7kw" />
+    <bpmn:userTask id="Task_13ftjdw" name="Create model" camunda:formKey="create-bpmn-model">
+      <bpmn:incoming>SequenceFlow_0y78swd</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0acvy3c</bpmn:outgoing>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmn:message id="Message_0pnbkm3" name="getStarted" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="GettingStartedGuide">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="CamundaStartedGuide">
       <bpmndi:BPMNEdge id="SequenceFlow_1yq92kx_di" bpmnElement="SequenceFlow_1yq92kx">
         <di:waypoint x="215" y="388" />
         <di:waypoint x="270" y="388" />
@@ -159,14 +164,14 @@
         <di:waypoint x="1032" y="491" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_1if04eu_di" bpmnElement="EndEvent_1if04eu">
-        <dc:Bounds x="1472" y="233" width="36" height="36" />
+        <dc:Bounds x="1602" y="233" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_15zqvga_di" bpmnElement="SequenceFlow_15zqvga">
         <di:waypoint x="1010" y="251" />
         <di:waypoint x="1065" y="251" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_006owwx_di" bpmnElement="Task_1ekg7kw">
-        <dc:Bounds x="1160" y="211" width="100" height="80" />
+        <dc:Bounds x="1290" y="211" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_0tmpaah_di" bpmnElement="Task_0fhckuc">
         <dc:Bounds x="590" y="211" width="100" height="80" />
@@ -227,7 +232,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0y78swd_di" bpmnElement="SequenceFlow_0y78swd">
         <di:waypoint x="1115" y="251" />
-        <di:waypoint x="1160" y="251" />
+        <di:waypoint x="1150" y="251" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0uam01t_di" bpmnElement="SequenceFlow_0uam01t">
         <di:waypoint x="1010" y="135" />
@@ -243,15 +248,22 @@
         <dc:Bounds x="910" y="348" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0e7ryt5_di" bpmnElement="SequenceFlow_0e7ryt5">
-        <di:waypoint x="1260" y="251" />
-        <di:waypoint x="1330" y="251" />
+        <di:waypoint x="1390" y="251" />
+        <di:waypoint x="1460" y="251" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0itpccw_di" bpmnElement="SequenceFlow_0itpccw">
-        <di:waypoint x="1430" y="251" />
-        <di:waypoint x="1472" y="251" />
+        <di:waypoint x="1560" y="251" />
+        <di:waypoint x="1602" y="251" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_1ujmyu0_di" bpmnElement="Task_0ctu164">
-        <dc:Bounds x="1330" y="211" width="100" height="80" />
+        <dc:Bounds x="1460" y="211" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0acvy3c_di" bpmnElement="SequenceFlow_0acvy3c">
+        <di:waypoint x="1250" y="251" />
+        <di:waypoint x="1290" y="251" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_03g717l_di" bpmnElement="Task_13ftjdw">
+        <dc:Bounds x="1150" y="211" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

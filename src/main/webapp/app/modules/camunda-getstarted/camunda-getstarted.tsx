@@ -42,7 +42,7 @@ class CamundaGettingStarted extends React.Component {
   };
 
   startMicroInstance = () => {
-    fetch('/rest/process-definition/key/GettingStartedGuide/start/', {
+    fetch('/rest/process-definition/key/CamundaStartedGuide/start/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ variables: { arch: { value: 'micro', type: 'String' } }, businessKey: '1' })
@@ -59,7 +59,7 @@ class CamundaGettingStarted extends React.Component {
       });
   };
   startSpringBootInstance = () => {
-    fetch('/rest/process-definition/key/GettingStartedGuide/start/', {
+    fetch('/rest/process-definition/key/CamundaStartedGuide/start/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ variables: { arch: { value: 'springboot', type: 'String' } }, businessKey: '1' })

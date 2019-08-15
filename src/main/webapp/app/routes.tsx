@@ -4,6 +4,7 @@ import Loadable from 'react-loadable';
 
 import Login from 'app/modules/login/login';
 import CamundaGetStarted from 'app/modules/camunda-getstarted/camunda-getstarted';
+import CreateBpmnModel from 'app/modules/create-bpmn-model/create-bpmn-model';
 import ShowMicroDownloads from 'app/modules/show-micro-downloads/show-micro-downloads';
 import ShowMicroDownloadsJava from 'app/modules/show-micro-downloads-java/show-micro-downloads-java';
 import ShowMicroRequirement from 'app/modules/show-micro-requirement/show-micro-requirement';
@@ -38,6 +39,7 @@ const Admin = Loadable({
 const Routes = () => (
   <div className="view-routes">
     <Switch>
+      <ErrorBoundaryRoute path="/create-bpmn-model" component={CreateBpmnModel} />
       <ErrorBoundaryRoute path="/camunda-getstarted" component={CamundaGetStarted} />
       <ErrorBoundaryRoute path="/create-external-client" component={CreateExternalClient} />
       <ErrorBoundaryRoute path="/show-micro-downloads" component={ShowMicroDownloads} />

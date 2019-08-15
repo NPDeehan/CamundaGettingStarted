@@ -139,6 +139,13 @@ jhipster:
     contact-email:
     license:
     license-url:
+  cors:
+    allowed-origins: '*'
+    allowed-methods: '*'
+    allowed-headers: '*'
+    exposed-headers: 'Authorization,Link,X-Total-Count'
+    allow-credentials: true
+    max-age: 1800
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class

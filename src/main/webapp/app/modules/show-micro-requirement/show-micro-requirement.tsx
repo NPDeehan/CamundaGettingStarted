@@ -57,37 +57,9 @@ class ShowMicroRequirement extends Component {
         <React.Fragment>
           <div>
             <h1>Get setup with everything you need</h1>
-            <h4>Select the programing language you'd like to use for this getting started guide</h4>
+            <h4>Below are links and instructions that will give you everything you need.</h4>
           </div>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class={this.state.lang === 'Java' ? 'btn btn-primary active' : 'btn btn-primary'}>
-              Java
-              <input checked={this.state.lang === 'Java'} value="Java" type="radio" name="options" id="option1" onChange={this.setLang} />
-            </label>
-            <label class={this.state.lang === 'JavaScript' ? 'btn btn-primary active' : 'btn btn-primary'}>
-              JavaScript
-              <input
-                checked={this.state.lang === 'JavaScript'}
-                value="JavaScript"
-                type="radio"
-                name="options"
-                id="option2"
-                onChange={this.setLang}
-              />
-            </label>
-            <label class={this.state.lang === 'Python' ? 'btn btn-primary active' : 'btn btn-primary'}>
-              I don't care
-              <input
-                checked={this.state.lang === 'Python'}
-                value="Python"
-                type="radio"
-                name="options"
-                id="option3"
-                onChange={this.setLang}
-              />
-            </label>
-          </div>
-          <br />
+
           <br />
           <h4>No matter which language you pick, you're doing to need the Camunda Engine</h4>
           <br />
@@ -146,6 +118,35 @@ class ShowMicroRequirement extends Component {
               .
             </p>
           </div>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class={this.state.lang === 'Java' ? 'btn btn-primary active' : 'btn btn-primary'}>
+              Java
+              <input checked={this.state.lang === 'Java'} value="Java" type="radio" name="options" id="option1" onChange={this.setLang} />
+            </label>
+            <label class={this.state.lang === 'JavaScript' ? 'btn btn-primary active' : 'btn btn-primary'}>
+              JavaScript
+              <input
+                checked={this.state.lang === 'JavaScript'}
+                value="JavaScript"
+                type="radio"
+                name="options"
+                id="option2"
+                onChange={this.setLang}
+              />
+            </label>
+            <label class={this.state.lang === 'Python' ? 'btn btn-primary active' : 'btn btn-primary'}>
+              I don't care
+              <input
+                checked={this.state.lang === 'Python'}
+                value="Python"
+                type="radio"
+                name="options"
+                id="option3"
+                onChange={this.setLang}
+              />
+            </label>
+          </div>
+          <br />
 
           <div>
             <button onClick={this.completeTask} className="btn btn-primary">
