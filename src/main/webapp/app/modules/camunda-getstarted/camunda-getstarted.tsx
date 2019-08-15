@@ -92,17 +92,17 @@ class CamundaGettingStarted extends React.Component {
       return (
         <React.Fragment>
           <Row>
-            <Col md="3" className="pad">
+            <Col>
               <div>
-                <h1>{this.state.processInstanceId}</h1>
+                <h3>You can Choose to build a project where the engine is remote and you can write independent services</h3>
                 <button onClick={this.startMicroInstance} className="btn btn-warning  ">
                   Create a Microserice Project
                 </button>
               </div>
             </Col>
-            <Col md="12" className="pad">
+            <Col>
               <div>
-                <h1>{this.state.processInstanceId}</h1>
+                <h3>You can also choose to make a springboot project where all of your logic will be in one Java Project</h3>
 
                 <img src={this.camundacorn} />
                 <button onClick={this.startSpringBootInstance} className="btn btn-primary">
