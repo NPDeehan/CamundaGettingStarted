@@ -70,16 +70,14 @@
         </bpmn:timerEventDefinition>
       </bpmn:startEvent>
     </bpmn:subProcess>
-    <bpmn:exclusiveGateway id="ExclusiveGateway_09x0x6s">
+    <bpmn:exclusiveGateway id="ExclusiveGateway_09x0x6s" default="SequenceFlow_1j961br">
       <bpmn:incoming>SequenceFlow_1yox3af</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1j961br</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_0azc6ps</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="SequenceFlow_1j961br" name="Java or Javascript" sourceRef="ExclusiveGateway_09x0x6s" targetRef="Task_1l4t4s7">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{useClient}</bpmn:conditionExpression>
-    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1j961br" name="Java or Javascript" sourceRef="ExclusiveGateway_09x0x6s" targetRef="Task_1l4t4s7" />
     <bpmn:sequenceFlow id="SequenceFlow_0azc6ps" name="Some other language" sourceRef="ExclusiveGateway_09x0x6s" targetRef="Task_18jxax4">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{not useClient}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{lang == 'Python'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:exclusiveGateway id="ExclusiveGateway_05rhtvc">
       <bpmn:incoming>SequenceFlow_0itm0ss</bpmn:incoming>
@@ -200,10 +198,10 @@
         <dc:Bounds x="885" y="291" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1j961br_di" bpmnElement="SequenceFlow_1j961br">
-        <di:waypoint x="910" y="316" />
+        <di:waypoint x="935" y="316" />
         <di:waypoint x="1020" y="316" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="935" y="348" width="90" height="14" />
+          <dc:Bounds x="944" y="348" width="90" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0azc6ps_di" bpmnElement="SequenceFlow_0azc6ps">
