@@ -58,6 +58,18 @@
       <bpmn:incoming>SequenceFlow_1yq92kx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1r8mmop</bpmn:outgoing>
     </bpmn:manualTask>
+    <bpmn:subProcess id="SubProcess_1ompfrj" triggeredByEvent="true">
+      <bpmn:endEvent id="EndEvent_17ckje3">
+        <bpmn:incoming>SequenceFlow_0t825p8</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="SequenceFlow_0t825p8" sourceRef="StartEvent_0ztqfar" targetRef="EndEvent_17ckje3" />
+      <bpmn:startEvent id="StartEvent_0ztqfar" name="2 hours">
+        <bpmn:outgoing>SequenceFlow_0t825p8</bpmn:outgoing>
+        <bpmn:timerEventDefinition id="TimerEventDefinition_18vsd0d">
+          <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT2H</bpmn:timeDuration>
+        </bpmn:timerEventDefinition>
+      </bpmn:startEvent>
+    </bpmn:subProcess>
   </bpmn:process>
   <bpmn:message id="Message_0pnbkm3" name="getStarted" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -145,6 +157,22 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ManualTask_0xoizjj_di" bpmnElement="Task_1j9z7cs">
         <dc:Bounds x="270" y="218" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_1mxzezx_di" bpmnElement="SubProcess_1ompfrj" isExpanded="true">
+        <dc:Bounds x="420" y="460" width="350" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_17ckje3_di" bpmnElement="EndEvent_17ckje3">
+        <dc:Bounds x="622" y="532" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0t825p8_di" bpmnElement="SequenceFlow_0t825p8">
+        <di:waypoint x="498" y="550" />
+        <di:waypoint x="622" y="550" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_08dfgw3_di" bpmnElement="StartEvent_0ztqfar">
+        <dc:Bounds x="462" y="532" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="462" y="575" width="37" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
