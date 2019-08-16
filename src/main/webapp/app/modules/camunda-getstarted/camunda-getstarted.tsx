@@ -103,7 +103,6 @@ class CamundaGettingStarted extends React.Component<IGetStartedProp> {
           <Row>
             <Col>
               <div>
-                <h1>{account.login}</h1>
                 <h3>You can Choose to build a project where the engine is remote and you can write independent services</h3>
                 <button onClick={this.startMicroInstance} className="btn btn-warning  ">
                   Create a Microserice Project

@@ -56,18 +56,27 @@ export class Home extends React.Component<IHomeProp> {
             <p className="lead">
               <Translate contentKey="home.subtitle">This is how to build your first Camunda process</Translate>
             </p>
+            <div>
+              <Alert color="info">
+                <Link to="/camunda-getstarted" className="alert-link">
+                  <Translate contentKey="home.link.getStarted">Register a new account</Translate>
+                </Link>
+              </Alert>
+            </div>
             {account && account.login ? (
               <div>
+                <div>
+                  <button onClick={this.continue} className="btn btn-warning">
+                    Continue Your Progress
+                  </button>
+                </div>
+                <br />
                 <Alert color="success">
                   <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
                     You are logged in as user {account.login}.
                   </Translate>
                 </Alert>
-                <div>
-                  <button onClick={this.continue} className="btn btn-primary">
-                    Continue...
-                  </button>
-                </div>
+
                 <br />
               </div>
             ) : (
@@ -87,13 +96,6 @@ export class Home extends React.Component<IHomeProp> {
                 </Alert>
               </div>
             )}
-            <div>
-              <Alert color="info">
-                <Link to="/camunda-getstarted" className="alert-link">
-                  <Translate contentKey="home.link.getStarted">Register a new account</Translate>
-                </Link>
-              </Alert>
-            </div>
 
             <p>
               <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
@@ -103,11 +105,6 @@ export class Home extends React.Component<IHomeProp> {
               <li>
                 <a href="/camunda-getstarted" target="_blank" rel="noopener noreferrer">
                   <Translate contentKey="home.link.getStarted">Get Started With Camunda!</Translate>
-                </a>
-              </li>
-              <li>
-                <a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-                  <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
                 </a>
               </li>
             </ul>
