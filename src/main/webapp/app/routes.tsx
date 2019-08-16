@@ -10,7 +10,7 @@ import ShowMicroDownloads from 'app/modules/show-micro-downloads/show-micro-down
 import ShowMicroDownloadsJava from 'app/modules/show-micro-downloads-java/show-micro-downloads-java';
 import ShowMicroRequirement from 'app/modules/show-micro-requirement/show-micro-requirement';
 import ShowExternalTaskRest from 'app/modules/show-external-task-rest/show-external-rest';
-import ShowSpringbootProject from 'app/modules/show-springboot-project-setup/how-springboot-project-setup';
+import ShowSpringbootProject from 'app/modules/show-springboot-project-setup/show-springboot-project-setup';
 import ShowSpringbootRequirement from 'app/modules/show-springboot-requirement/show-springboot-requirement';
 import CreateExternalClient from 'app/modules/create-external-client/create-external-client';
 import Register from 'app/modules/account/register/register';
@@ -48,7 +48,7 @@ const Routes = () => (
       <ErrorBoundaryRoute path="/show-micro-downloads-java" component={ShowMicroDownloadsJava} />
       <ErrorBoundaryRoute path="/show-micro-requirement" component={ShowMicroRequirement} />
       <ErrorBoundaryRoute path="/show-external-task-rest" component={ShowExternalTaskRest} />
-      <ErrorBoundaryRoute path="/show-springboot-project-setup" component={ShowSpringbootRequirement} />
+      <ErrorBoundaryRoute path="/show-springboot-project-setup" component={ShowSpringbootProject} />
       <ErrorBoundaryRoute path="/show-springboot-requirement" component={ShowSpringbootRequirement} />
       <ErrorBoundaryRoute path="/login" component={Login} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />

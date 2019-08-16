@@ -57,7 +57,7 @@ class ShowSpringbootProjectSetup extends Component {
       return (
         <React.Fragment>
           <div>
-            <h1>Spring Boot Requirements</h1>
+            <h1>Spring Boot Project Setup</h1>
             <p>Here are some basic requirements to lift off with Camunda and Spring Boot.</p>
             <ul className="list-group">
               <li className="list-group-item d-flex justify-content-between align-items-center">IDE (e.g. Intellij IDEA or Eclipse)</li>
