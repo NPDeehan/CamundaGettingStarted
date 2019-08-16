@@ -1,5 +1,20 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+const code = `
+package org.camunda.bpm.getstarted.loanapproval;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class WebappExampleProcessApplication {
+\tpublic static void main(String... args) {
+\t\tSpringApplication.run(WebappExampleProcessApplication.class, args);
+\t}
+}`;
 
 class ShowSpringbootProjectSetup extends Component {
   state = {
@@ -58,12 +73,19 @@ class ShowSpringbootProjectSetup extends Component {
         <React.Fragment>
           <div>
             <h1>Spring Boot Project Setup</h1>
-            <p>Here are some basic requirements to lift off with Camunda and Spring Boot.</p>
-            <ul className="list-group">
-              <li className="list-group-item d-flex justify-content-between align-items-center">IDE (e.g. Intellij IDEA or Eclipse)</li>
-              <li className="list-group-item d-flex justify-content-between align-items-center">Maven</li>
-              <li className="list-group-item d-flex justify-content-between align-items-center">JDK</li>
-            </ul>
+            <h2>Add Main Class to our Spring Boot Application</h2>
+            <p>
+              Next, we add an application class with a main method that will be the entry point for launching the Spring Boot application.
+              The class has the annotation @SpringBootApplication on it, which implicitly adds several convenient features
+              (autoconfiguration, component scan, etc. - see Spring Boot docs). The class is added in the src/main/java folder in the
+              org.camunda.bpm.getstarted.loanapproval package.
+            </p>
+            <p className="card-text">
+              {' '}
+              <SyntaxHighlighter language="java" style={docco}>
+                {code}
+              </SyntaxHighlighter>{' '}
+            </p>
           </div>
           <div>
             <button onClick={this.completeTask} className="btn btn-primary">
