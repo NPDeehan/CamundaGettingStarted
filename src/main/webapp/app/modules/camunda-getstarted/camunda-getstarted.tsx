@@ -3,8 +3,17 @@ import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
 import { Row, Col } from 'reactstrap';
 import { Route, Redirect } from 'react-router';
 import { Translate } from 'react-jhipster';
+import { IRootState } from 'app/shared/reducers';
+import { getSession } from 'app/shared/reducers/authentication';
+import { connect } from 'react-redux';
 
-class CamundaGettingStarted extends React.Component {
+export interface IGetStartedProp extends StateProps {}
+
+class CamundaGettingStarted extends React.Component<IGetStartedProp> {
+  componentDidMount() {
+    this.props.getSession();
+  }
+
   handleClick(event: MouseEvent) {
     event.preventDefault();
     alert(event.currentTarget.tagName); // alerts BUTTON
@@ -46,7 +55,7 @@ class CamundaGettingStarted extends React.Component {
     fetch('/rest/process-definition/key/CamundaStartedGuide/start/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ variables: { arch: { value: 'micro', type: 'String' } }, businessKey: '1' })
+      body: JSON.stringify({ variables: { arch: { value: 'micro', type: 'String' } }, businessKey: this.props.account.login })
     })
       .then(response => response.json())
       .then(data => {
@@ -63,7 +72,7 @@ class CamundaGettingStarted extends React.Component {
     fetch('/rest/process-definition/key/CamundaStartedGuide/start/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ variables: { arch: { value: 'springboot', type: 'String' } }, businessKey: '1' })
+      body: JSON.stringify({ variables: { arch: { value: 'springboot', type: 'String' } }, businessKey: this.props.account.login })
     })
       .then(response => response.json())
       .then(data => {
@@ -78,6 +87,7 @@ class CamundaGettingStarted extends React.Component {
   };
 
   render() {
+    const { account } = this.props;
     if (this.state.ref) {
       return (
         <Redirect
@@ -93,6 +103,7 @@ class CamundaGettingStarted extends React.Component {
           <Row>
             <Col>
               <div>
+                <h1>{account.login}</h1>
                 <h3>You can Choose to build a project where the engine is remote and you can write independent services</h3>
                 <button onClick={this.startMicroInstance} className="btn btn-warning  ">
                   Create a Microserice Project
@@ -114,4 +125,17 @@ class CamundaGettingStarted extends React.Component {
   }
 }
 
-export default CamundaGettingStarted;
+const mapStateToProps = storeState => ({
+  account: storeState.authentication.account,
+  isAuthenticated: storeState.authentication.isAuthenticated
+});
+
+const mapDispatchToProps = { getSession };
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CamundaGettingStarted);
