@@ -17,7 +17,7 @@
     "bootswatch": "4.3.1",
     "bpmn-js": "^5.0.0",
     "loaders.css": "0.1.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "2.24.0",
     "react": "16.8.5",
     "react-bpmn": "^0.1.1",
