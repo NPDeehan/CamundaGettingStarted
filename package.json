@@ -18,7 +18,7 @@
     "bpmn-js": "^5.0.0",
     "loaders.css": "0.1.2",
     "lodash": "^4.17.15",
-    "moment": "2.24.0",
+    "moment": "2.29.2",
     "react": "16.8.5",
     "react-bpmn": "^0.1.1",
     "react-dom": "16.8.5",
